@@ -118,7 +118,7 @@ namespace EventLesson
 
         private static void Product_EventHandlerPriceChange(decimal priceChange, decimal oldPrice)
         {
-            Action<decimal, decimal> printPrice = new Action<decimal, decimal>(PrintPriceChange);
+            Action<decimal, decimal> printPrice = PrintPriceChange;
             printPrice(priceChange, oldPrice);
             
         }
