@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace ConvertAllMethod
 {
+   
     class Program 
     {
         static double TakeSquareRoot(int x)
@@ -63,12 +64,15 @@ namespace ConvertAllMethod
        Console.WriteLine(AreReferencesEqual(intro1,intro2));*/
 
        // Generic class representing a pair of values
-       Pair<int, string> pair = new Pair<int, string>(10, "value");
-
-       pair.Equals(new Pair<int, string>(10, "value"));
+      // Pair<int, string> pair = new Pair<int, string>(10, "value");
+      
+      // pair.Equals(new Pair<int, string>(10, "value"));
        
-       pair.GetHashCode();
-
+     //  pair.GetHashCode();
+       
+        Pair<int, string> pair = Pair.Of(10, "value");
+       
+        pair.Equals(new Pair<int, string>(10, "value")); 
         }
     }
 }
