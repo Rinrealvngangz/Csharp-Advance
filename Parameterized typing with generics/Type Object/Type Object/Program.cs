@@ -2,15 +2,14 @@
 using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Numerics;
 
 namespace TypeObject
 {
+   
     class Program
     {
-        static void PrintTypeParameter<T>()
-        {
-            Console.WriteLine(typeof(T));
-        }
+       
         static void Main(string[] args)
         {
             string listTypeName = "System.Collections.Generic.List`1";
@@ -34,7 +33,7 @@ namespace TypeObject
            objDynamic.Add("a");
            objDynamic.Add("b");
            Console.WriteLine(objDynamic[0]);
-
+           
         }
     }
 }
