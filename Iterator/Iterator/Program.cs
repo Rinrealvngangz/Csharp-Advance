@@ -1,8 +1,11 @@
-﻿using Iterator.IteratorsC_1;
+﻿using System.Linq.Expressions;
+using Iterator.IteratorsC_1;
 using Iterator.IteratorC_2;
 using Iterator.IteratorWorkflow;
+using Iterator.WhereMethod;
 
-object [] values = {"a","b","c","d","e"};
+
+ object [] values = {"a","b","c","d","e"};
 Console.WriteLine("In in C# 1");
 IterationSample iterationSample = new IterationSample(values,3);
 
@@ -109,3 +112,21 @@ Console.WriteLine("Received {0}",iterator1.Current);
 
 iterator.MoveNext();
 Console.WriteLine("Received {0}",iterator.Current);
+
+    
+    
+// linq where method lazy
+Console.WriteLine("linq where method");
+string[] data = {"a","b","c","d"};
+
+Predicate<string> IsExistData = delegate(string s)
+{
+    return s.Equals("b");
+};
+ 
+ foreach (string item in LinqWhereMethod.Where(data,IsExistData))
+ {
+     Console.WriteLine(item);
+ }
+
+delegate bool CheckIsExist(string item);
